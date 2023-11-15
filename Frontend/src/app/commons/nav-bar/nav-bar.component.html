@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" id="responsive-navbar">
+  <a class="navbar-brand font-mono" routerLinkActive="active" routerLink="/">FLATSALE</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto navbar-style">
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLinkActive="active" routerLink="/">Buy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLinkActive="active" routerLink="property/rent">Rent</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLinkActive="active" routerLink="property/add">Add Property (Free)</a>
+      </li>
+    </ul>
+  </div>
+  <div class="register">
+    <ul class="nav navbar-nav">
+      <li *ngIf="!loggedIn()" class="nav-item">
+        <a class="nav-link text-white" routerLinkActive="active" routerLink="/user/register">Register</a>
+      </li>
+      <li *ngIf="!loggedIn()" class="nav-item">
+        <a class="nav-link text-white" routerLinkActive="active" routerLink="/user/login">Login</a>
+      </li>
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link text-white" (click)="onLogOut()">Logout</a>-->
+<!--      </li>-->
+      <ng-container *ngIf="loggedIn()" class="dropdown mr-5" dropdown>
+        <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false">
+          {{ userName }}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+          <a href="#" class="dropdown-item">
+            <i class="fa-solid fa-chart-line"></i> View Dashboard
+          </a>
+          <a href="#" class="dropdown-item">
+            <i class="fa-solid fa-user"></i> My Profile
+          </a>
+          <a href="#" class="dropdown-item">
+            <i class="fa-solid fa-key"></i> Change Password
+          </a>
+          <a href="#" (click)="onLogOut()" class="dropdown-item">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </a>
+        </div>
+      </ng-container>
+    </ul>
+  </div>
+</nav>

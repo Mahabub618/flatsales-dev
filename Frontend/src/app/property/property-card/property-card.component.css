@@ -1,0 +1,52 @@
+.propImg{
+  height: 250px;
+  width: 250px;
+}
+.card-img-wrapper{
+  overflow: hidden;
+  position: relative;
+}
+mat-card:hover {
+  cursor: pointer;
+}
+mat-card:hover img {
+  transform: scale(1.2, 1.2);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  opacity: .5;
+}
+mat-card img {
+  transform: scale(1, 1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+.member-icons{
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0;
+}
+.card-img-wrapper:hover .member-icons{
+  bottom: 0;
+  opacity: 1;
+}
+.animate{
+  transition: all 0.3s ease-in-out;
+}
+.card-style{
+  display: inline-block;
+  overflow: hidden !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.text-style {
+  font-weight: bold;
+  font-family: math;
+}
+.card-body h1 {
+  font-family: fantasy;
+  color: #0069d9;
+}

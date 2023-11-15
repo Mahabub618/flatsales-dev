@@ -1,0 +1,12 @@
+.card {
+  --bs-card-spacer-x: 2rem;
+}
+.form-control {
+  width: 20rem !important;
+}
+.mr-1 {
+  margin-right: 1rem !important;
+}
+.card-header {
+  text-align: center;
+}
