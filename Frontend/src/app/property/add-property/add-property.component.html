@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-8">
+  <div class="col-left overflow-auto">
     <div class="card">
       <div class="card-header">
         List your Property
       </div>
-      <div class="card-body">
+      <div class="card-body custom-card-body-width">
         <form (ngSubmit)="onSubmit()" [formGroup]="addPropertyForm">
           <div class="tab-panel">
             <tabset class="member-tabset" #formTabs>
@@ -243,7 +243,7 @@
       </div>
     </div>
   </div>
-  <div class="col-4">
+  <div class="col-right overflow-auto">
     <div class="card">
       <div class="card-header">
         <h3>Your Property Preview</h3>

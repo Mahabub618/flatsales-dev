@@ -40,3 +40,18 @@
   display: flex;
   justify-content: center;
 }
+.form-control[_ngcontent-ng-c3206016232] {
+  width: 100% !important;
+  /*min-width: 70px !important;*/
+}
+.custom-card-body-width {
+  width: 620px !important; /* Set your desired width */
+}
+.col-left {
+  flex: 0 0 auto;
+  width: 644px;
+}
+.col-right {
+  flex: 0 0 auto;
+  width: 325px;
+}

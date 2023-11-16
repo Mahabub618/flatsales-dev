@@ -10,8 +10,10 @@ import {UserRegisterComponent} from "./user-register/user-register.component";
 
 
 @NgModule({
-  declarations: [    UserLoginComponent,
-    UserRegisterComponent],
+  declarations: [
+    UserLoginComponent,
+    UserRegisterComponent
+  ],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -20,7 +22,6 @@ import {UserRegisterComponent} from "./user-register/user-register.component";
     FormsModule,
     BootstrapModule
   ],
-  exports: [    UserLoginComponent,
-    UserRegisterComponent]
+  exports: []
 })
 export class UserModule { }

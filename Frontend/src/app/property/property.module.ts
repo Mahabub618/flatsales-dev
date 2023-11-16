@@ -27,11 +27,6 @@ import {CommonsModule} from "../modules/commons/commons.module";
     BootstrapModule,
     CommonsModule
   ],
-  exports: [
-    PropertyCardComponent,
-    PropertyListComponent,
-    AddPropertyComponent,
-    PropertyDetailComponent,
-  ]
+  exports: []
 })
 export class PropertyModule { }
