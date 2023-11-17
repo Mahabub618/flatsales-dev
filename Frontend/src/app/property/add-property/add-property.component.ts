@@ -205,7 +205,7 @@ export class AddPropertyComponent implements OnInit {
       console.log(this.addPropertyForm);
 
       if(this.SellRent.value === '2') {
-        this.router.navigate(['/rent-property']);
+        this.router.navigate(['property/rent']);
       } else {
         this.router.navigate(['/']);
       }
