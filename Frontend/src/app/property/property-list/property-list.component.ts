@@ -25,17 +25,18 @@ export class PropertyListComponent implements OnInit, OnDestroy{
     if(this.route.snapshot.url.toString()){
       this.SellRent = 2;
     }
-    this.housingService.getAllProperties()
-      .pipe(takeUntil(this.destroyed$))
-      .subscribe((response : IHouse[]) =>{
-        this.properties = response.filter((val) => val.SellRent === this.SellRent);
+    this.housingService.getAllProperties(this.SellRent)
+        .subscribe((response) => {
+          if (response && response.length > 0) {
+            this.properties = response;
+            console.log(this.properties);
+          } else {
+            console.log('Empty response or invalid data');
+          }
+        }, (error) => {
+          console.error('Error occurred:', error);
+        });
 
-        const allProperties = JSON.parse(localStorage.getItem('newProp') || "[]");
-        const localProperties : Array<IHouse> = allProperties.filter((val: IHouse) => val.SellRent === this.SellRent);
-        this.properties = [...this.properties, ...localProperties];
-        // console.log(this.properties);
-        //  this.properties = response;
-      });
   }
   ngOnDestroy() {
     this.destroyed$.next(true);
