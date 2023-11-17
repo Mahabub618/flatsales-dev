@@ -40,3 +40,14 @@
   display: flex;
   justify-content: center;
 }
+.col-left {
+  flex: 0 0 auto;
+  width: 670px !important;
+}
+.col-right {
+  flex: 0 0 auto;
+  width: 335px !important;
+}
+.form-control[_ngcontent-ng-c3523809663] {
+  width: 100% !important;
+}

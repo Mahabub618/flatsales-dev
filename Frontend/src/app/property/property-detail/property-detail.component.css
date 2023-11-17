@@ -1,3 +1,18 @@
-.scroll {
-  margin-right: 0.5rem;
+.height_600 {
+  min-height: 600px !important;
+}
+h1 {
+  font-size: 30px !important;
+  font-weight: 500 !important;
+}
+img {
+  height: 250px !important;
+}
+.col-left {
+  flex: 0 0 auto;
+  width: 335px !important;
+}
+.col-right {
+  flex: 0 0 auto;
+  width: 670px !important;
 }
