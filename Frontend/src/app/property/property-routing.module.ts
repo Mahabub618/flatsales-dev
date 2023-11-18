@@ -28,11 +28,7 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddPropertyComponent
-  },
-  {
-    path: 'detail/:id',
-    component: PropertyDetailComponent
-  },
+  }
 ];
 
 @NgModule({

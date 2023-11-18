@@ -17,10 +17,12 @@ export class PropertyDetailComponent implements OnInit{
     private housingService: HousingService) {
   }
   ngOnInit() {
+    console.log("YES COME");
     this.propertyId = +this.route.snapshot.params['id'];
 
     this.route.params.subscribe((params) => {
       this.propertyId = +params['id'];
+      console.log("propertyId", this.propertyId);
       this.housingService.getProperty(this.propertyId).subscribe((data : any) => {
         this.property = data;
       })

@@ -19,9 +19,13 @@ export class HousingService {
     return this.http.get('data/properties.json').pipe(
         map((data: any) : any => {
           const propertiesArray: Array<IHouse> = [];
-          const localProperties = JSON.parse(localStorage.getItem('newProp') || '');
-          propertiesArray.push(...data);
-          propertiesArray.push(...localProperties);
+          try {
+            const localProperties = JSON.parse(localStorage.getItem('newProp')!);
+            propertiesArray.push(...localProperties);
+          } catch (error) {
+            console.error('Error parsing JSON:', error);
+          }
+          propertiesArray.push(...data);;
           if(SellRent) {
             return propertiesArray.filter((val) => val.SellRent === SellRent);
           }
