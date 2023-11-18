@@ -2,7 +2,8 @@
   <div class="col-left p-0">
     <mat-card class="card-style height_600">
       <div class="card-img-wrapper">
-        <img class="card-img-top" src="assets/prop-1.jpg">
+        <img *ngIf="property.Image" class="card-img-top" src="assets/{{property.Image}}.jpg">
+        <img *ngIf="!property.Image" class="card-img-top" src="assets/default_house.png">
       </div>
       <div class="card-body p-4">
         <h1 class="card-title">{{ property.Name }}</h1>

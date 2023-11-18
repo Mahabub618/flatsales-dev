@@ -8,27 +8,23 @@ const routes: Routes = [
   {
     path: 'buy',
     component: PropertyListComponent,
-    children: [
-      {
-        path: 'detail/:id',
-        component: PropertyDetailComponent
-      }
-    ]
   },
   {
     path: 'rent',
     component: PropertyListComponent,
-    children: [
-      {
-        path: 'detail/:id',
-        component: PropertyDetailComponent
-      }
-    ]
   },
   {
     path: 'add',
     component: AddPropertyComponent
-  }
+  },
+  {
+    path: 'rent/detail/:id',
+    component: PropertyDetailComponent,
+  },
+  {
+    path: 'buy/detail/:id',
+    component: PropertyDetailComponent,
+  },
 ];
 
 @NgModule({
