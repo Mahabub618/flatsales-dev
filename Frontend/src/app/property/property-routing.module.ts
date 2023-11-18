@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AddPropertyComponent} from "./add-property/add-property.component";
 import {PropertyListComponent} from "./property-list/property-list.component";
 import {PropertyDetailComponent} from "./property-detail/property-detail.component";
+import {PropertyDetailResolverService} from "./property-detail/property-detail-resolver.service";
 
 const routes: Routes = [
   {
@@ -20,10 +21,12 @@ const routes: Routes = [
   {
     path: 'rent/detail/:id',
     component: PropertyDetailComponent,
+    resolve: {detail: PropertyDetailResolverService}
   },
   {
     path: 'buy/detail/:id',
     component: PropertyDetailComponent,
+    resolve: {detail: PropertyDetailResolverService}
   },
 ];
 

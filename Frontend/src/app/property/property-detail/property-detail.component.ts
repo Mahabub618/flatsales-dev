@@ -19,14 +19,16 @@ export class PropertyDetailComponent implements OnInit{
   ngOnInit() {
     console.log("YES COME");
     this.propertyId = +this.route.snapshot.params['id'];
-
-    this.route.params.subscribe((params) => {
-      this.propertyId = +params['id'];
-      console.log("propertyId", this.propertyId);
-      this.housingService.getProperty(this.propertyId).subscribe((data : any) => {
-        this.property = data;
-      })
+    this.route.data.subscribe((data: any) => {
+      this.property = data['detail'];
     })
+    // this.route.params.subscribe((params) => {
+    //   this.propertyId = +params['id'];
+    //   console.log("propertyId", this.propertyId);
+    //   this.housingService.getProperty(this.propertyId).subscribe((data : any) => {
+    //     this.property = data;
+    //   })
+    // })
   }
   onSelectNext(){
     this.propertyId += 1;
