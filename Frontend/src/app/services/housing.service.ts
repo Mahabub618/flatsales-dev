@@ -48,8 +48,9 @@ export class HousingService {
     }
     newPropID() {
         if(localStorage.getItem('PID')) {
-            const lastID : number = +localStorage.getItem('PID')!;
-            return lastID+1;
+            const lastID : number = +localStorage.getItem('PID')! + 1;
+            localStorage.setItem('PID', lastID.toString())
+            return lastID;
         } else {
             localStorage.setItem('PID', '101');
             return 101;
