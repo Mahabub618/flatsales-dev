@@ -6,16 +6,28 @@ import {PropertyDetailComponent} from "./property-detail/property-detail.compone
 
 const routes: Routes = [
   {
-    path: '',
-    component: PropertyListComponent
+    path: 'buy',
+    component: PropertyListComponent,
+    children: [
+      {
+        path: 'detail/:id',
+        component: PropertyDetailComponent
+      }
+    ]
+  },
+  {
+    path: 'rent',
+    component: PropertyListComponent,
+    children: [
+      {
+        path: 'detail/:id',
+        component: PropertyDetailComponent
+      }
+    ]
   },
   {
     path: 'add',
     component: AddPropertyComponent
-  },
-  {
-    path: 'rent',
-    component: PropertyListComponent
   },
   {
     path: 'detail/:id',

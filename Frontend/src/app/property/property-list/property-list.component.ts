@@ -22,9 +22,8 @@ export class PropertyListComponent implements OnInit, OnDestroy{
   getHouses() {
     // Below route snapshot is used based on
     // routerLink of "Buy" and "Sell" of nav-bar.component.html
-    if(this.route.snapshot.url.toString()){
-      this.SellRent = 2;
-    }
+    const buyOrRent = this.route.snapshot.url.toString();
+    this.SellRent = (buyOrRent === 'buy' ? 2 : 1);
     this.housingService.getAllProperties(this.SellRent)
         .subscribe((response) => {
           if (response && response.length > 0) {
