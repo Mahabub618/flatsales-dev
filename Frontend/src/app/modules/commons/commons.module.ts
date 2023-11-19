@@ -3,15 +3,25 @@ import { CommonModule } from '@angular/common';
 import {NavBarComponent} from "../../commons/nav-bar/nav-bar.component";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {BootstrapModule} from "../bootstrap/bootstrap.module";
+import {FilterPipe} from "../../pipes/filter.pipe";
+import {SortPipe} from "../../pipes/sort.pipe";
 
 @NgModule({
-  declarations: [NavBarComponent],
+  declarations: [
+    NavBarComponent,
+    FilterPipe,
+    SortPipe
+  ],
   imports: [
     CommonModule,
     RouterLink,
     RouterLinkActive,
     BootstrapModule
   ],
-  exports: [NavBarComponent]
+  exports: [
+    NavBarComponent,
+    FilterPipe,
+    SortPipe
+  ]
 })
 export class CommonsModule { }

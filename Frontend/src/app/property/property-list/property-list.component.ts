@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import {ReplaySubject, Subject, takeUntil} from 'rxjs';
+import {filter, ReplaySubject} from 'rxjs';
 import { HousingService } from 'src/app/services/housing.service';
 import {ActivatedRoute} from "@angular/router";
 import {IHouse} from "../../models/IHouse";
@@ -14,6 +13,10 @@ export class PropertyListComponent implements OnInit, OnDestroy{
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
   properties: Array<IHouse> = [];
   SellRent: number = 1; // 1 means Buy; 2 means Rent;
+  City = '';
+  SearchCity = '';
+  SortByParam = '';
+  SortDirection = 'asc';
   constructor(private housingService: HousingService, private route: ActivatedRoute) {
   }
   ngOnInit(): void {
@@ -36,6 +39,21 @@ export class PropertyListComponent implements OnInit, OnDestroy{
           console.error('Error occurred:', error);
         });
 
+  }
+  onCityFilter() {
+    this.SearchCity = this.City;
+  }
+  onClearCity() {
+    this.SearchCity = '';
+    this.City = '';
+  }
+  onSortDirection() {
+    if(this.SortDirection === 'desc') {
+      this.SortDirection = 'asc';
+    }
+    else {
+      this.SortDirection = 'desc';
+    }
   }
   ngOnDestroy() {
     this.destroyed$.next(true);
