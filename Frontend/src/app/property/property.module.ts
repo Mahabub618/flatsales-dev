@@ -10,6 +10,7 @@ import {MatCardModule} from "@angular/material/card";
 import {BootstrapModule} from "../modules/bootstrap/bootstrap.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonsModule} from "../modules/commons/commons.module";
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {CommonsModule} from "../modules/commons/commons.module";
     ReactiveFormsModule,
     FormsModule,
     BootstrapModule,
-    CommonsModule
+    CommonsModule,
+    NgxGalleryModule
   ],
   exports: [
     PropertyCardComponent,
