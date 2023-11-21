@@ -12,11 +12,12 @@ import {IHouse} from "../../models/IHouse";
 export class PropertyListComponent implements OnInit, OnDestroy{
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
   properties: Array<IHouse> = [];
-  SellRent: number = 1; // 1 means Buy; 2 means Rent;
+  SellRent?: number; // 1 means Buy; 2 means Rent;
   City = '';
   SearchCity = '';
   SortByParam = '';
   SortDirection = 'asc';
+  hidePropertyDetail: boolean = false;
   constructor(private housingService: HousingService, private route: ActivatedRoute) {
   }
   ngOnInit(): void {
@@ -26,7 +27,14 @@ export class PropertyListComponent implements OnInit, OnDestroy{
     // Below route snapshot is used based on
     // routerLink of "Buy" and "Sell" of nav-bar.component.html
     const buyOrRent = this.route.snapshot.url.toString();
-    this.SellRent = (buyOrRent === 'buy' ? 2 : 1);
+    console.log("buyOrRent", buyOrRent);
+    if(buyOrRent) {
+      this.SellRent = (buyOrRent === 'buy' ? 2 : 1);
+    }
+    else {
+      this.SellRent = undefined;
+      this.hidePropertyDetail = true;
+    }
     this.housingService.getAllProperties(this.SellRent)
         .subscribe((response) => {
           if (response && response.length > 0) {

@@ -25,7 +25,8 @@
   <div [ngClass]="{'col-sm-3' : properties.length > 3, 'col-sm-6' : properties.length <= 3}"
        *ngFor="let property of properties|filter:SearchCity:'City' | sort:[SortByParam, SortDirection]">
     <app-property-card
-      [property]="property">
+      [property]="property"
+      [hideIcons]="hidePropertyDetail">
     </app-property-card>
   </div>
 </div>
