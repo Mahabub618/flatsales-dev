@@ -27,7 +27,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     FormsModule,
     BootstrapModule,
     CommonsModule,
-    NgxGalleryModule,
+    NgxGalleryModule
   ],
   exports: [
     PropertyCardComponent,

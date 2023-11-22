@@ -1,29 +1,5 @@
-<div class="row mb-2">
-  <div class="col d-flex justify-content-between">
-    <div>
-      <label>Filter City: &nbsp;</label>
-      <input [(ngModel)]="City" style="margin-right: 20px">
-      <button type="button" (click)="onCityFilter()" style="margin-right: 5px">Search</button>
-      <button type="button" (click)="onClearCity()">Clear</button>
-    </div>
-
-    <div>
-      <label>Sort by &nbsp;</label>
-      <select [(ngModel)] = 'SortByParam' style="margin-right: 20px">
-        <option value="City">City</option>
-        <option value="Price">Price</option>
-      </select>
-      <button type="button" (click)="onSortDirection()">
-        Sort
-        <i *ngIf="SortDirection === 'asc'" class="fas fa-sort-alpha-down"></i>
-        <i *ngIf="SortDirection === 'desc'" class="fas fa-sort-alpha-up"></i>
-      </button>
-    </div>
-  </div>
-</div>
 <div class="row">
-  <div [ngClass]="{'col-sm-3' : properties.length > 3, 'col-sm-6' : properties.length <= 3}"
-       *ngFor="let property of properties|filter:SearchCity:'City' | sort:[SortByParam, SortDirection]">
+  <div [ngClass]="{'col-sm-3' : properties.length > 3, 'col-sm-6' : properties.length <= 3}" *ngFor="let property of properties">
     <app-property-card
       [property]="property"
       [hideIcons]="hidePropertyDetail">

@@ -29,8 +29,6 @@ import {CommonsModule} from "./modules/commons/commons.module";
     AlertifyService,
     AuthService
   ],
-  exports: [
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
